@@ -3,7 +3,7 @@
 ################################################################
 
 # command to read from Wufoo
-# sudo sh -c 'curl -u WUFOO-API-KEY:doesntmatter https://hudl.wufoo.com/api/v3/forms/how-healthy-is-your-squad/entries.xml > /var/shiny-server/www/shinyApp/entries.xml'
+# sudo sh -c 'curl -u WUFOO-API-KEY:doesntmatter https://hudl.wufoo.com/api/v3/forms/how-healthy-is-your-squad/entries.xml > /var/shiny-server/www/squadHealth/entries.xml'
 library(shiny)
 library(XML)
 
