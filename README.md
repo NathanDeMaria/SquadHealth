@@ -6,3 +6,6 @@ R packages used: shiny, XML
 	to install (in R):
 		install.packages('shiny', lib='/usr/local/lib/R/site-library/')
 		install.packages('XML', lib='/usr/local/lib/R/site-library/')
+		
+If the Wufoo call has updated the data, but the page still shows the old data, run:
+		sudo touch /var/shiny-server/www/shinyHudl/restart.txt
