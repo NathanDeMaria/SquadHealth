@@ -10,17 +10,7 @@ shinyServer(function(input, output) {
   output$style = renderText({
     paste0('
 <style type="text/css">
-  .first {
-    height:50px; 
-    display:inline-block; 
-    margin-right:10px;
-    margin-top:10px;
-    text-align:center;
-    vertical-align:middle;
-    padding-top:16px;   
-    box-sizing: border-box;   
-    width:15%;
-  }
+
   .box {
     height:50px; 
     border-radius:5px; 
@@ -33,30 +23,7 @@ shinyServer(function(input, output) {
     box-sizing: border-box;
     width:', min(70 / num.cols(), 15), '%
   }
-  .white {
-    background-color:white;
-    color:black;
-  }
-  .yellow {
-    background-color:#FFFFBF;
-    color:black;
-  }
-  .green {
-    background-color:#1A9641;
-    color:black;
-  }
-  .red {
-    background-color:#D7191C;
-    color:white;
-  }
-  .yellowGreen {
-    background-color:#A6D96A;
-    color:black;
-  }
-  .orange {
-    background-color:#FDAE61;
-    color:black;
-  }
+}
 </style>               
                   ')
   })
