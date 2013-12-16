@@ -1,6 +1,5 @@
 library(shiny)
 
-# Define server logic required to generate and plot a random distribution
 shinyServer(function(input, output) {
   
   time.period = reactive({input$time.period})
@@ -10,7 +9,6 @@ shinyServer(function(input, output) {
   output$style = renderText({
     paste0('
 <style type="text/css">
-
   .box {
     height:50px; 
     border-radius:5px; 
@@ -48,7 +46,7 @@ shinyServer(function(input, output) {
     }
     
     # hard coded in because the XML just says Field 4, etc.
-      # I think if you want to change these things, you might have to change my R code here and in global.R
+      # When changing names of questions, change my R code here and in global.R
     rownames(ratings) = c('Tribe Leader', 'PM', 'Influence Work', 'Easy Release', 'Process', 'Mission', 'Take Risks', 'Org. Support')
 
     # to handle adding/removing squads
@@ -58,7 +56,6 @@ shinyServer(function(input, output) {
     
     rows = paste0(lapply(1:dim(ratings)[1], function(rowNum) {make.row(rownames(ratings)[rowNum], ratings[rowNum,valid.cols], prevRatings[rowNum,valid.cols])}),collapse='')
       
-    # switch from 100% to 1600px avoid getting gross if table can't fit
     paste0('<table width=1600px><thead>', headrow, '</thead><tbody>', rows, '</tbody></table>')
   })
 

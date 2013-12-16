@@ -1,11 +1,8 @@
 library(shiny)
 
-# change to hover over rows/cols? :)
-
-
 shinyUI(bootstrapPage(
   
-# title
+# Style
   HTML(paste0('
 <style type="text/css">
          .header {
@@ -37,33 +34,38 @@ shinyUI(bootstrapPage(
            width:15%;
          }
          .white {
-         background-color:white;
-         color:black;
+          background-color:white;
+           color:black;
          }
          .yellow {
-         background-color:#FFFFBF;
-         color:black;
+          background-color:#FFFFBF;
+          color:black;
          }
          .green {
-         background-color:#1A9641;
-         color:black;
+          background-color:#1A9641;
+          color:black;
          }
          .red {
-         background-color:#D7191C;
-         color:white;
+          background-color:#D7191C;
+          color:white;
          }
-         .yellowGreen {
-         background-color:#A6D96A;
-         color:black;
+          .yellowGreen {
+          background-color:#A6D96A;
+          color:black;
          }
          .orange {
-         background-color:#FDAE61;
-         color:black;
+          background-color:#FDAE61;
+          color:black;
          }
-         </style>')),
+</style>')),
+  
+  # top bar
         div(class='header', img(src='hudl-logo-white.png', class='headerRow'), h3(style='margin-left: 20px', "Squad Health", class='headerRow')),
+  # quarter selector    
         sidebarPanel(selectInput(inputId="time.period", label="Time Period:", choices)),
+  # lets the style of a box depend on how many there are      
         htmlOutput('style'),
+  # the table
         htmlOutput('table')
 
 ))
