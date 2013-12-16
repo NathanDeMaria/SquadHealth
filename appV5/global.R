@@ -10,7 +10,7 @@
 # setwd('C:/Users/nathan.demaria/Dropbox/R Projects/Hudl/Squad Health/appV5')
 
 # command to read from Wufoo
-# sudo sh -c 'curl -u UZGS-U3MK-WAF5-VI0D:doesntmatter https://hudl.wufoo.com/api/v3/forms/how-healthy-is-your-squad/entries.xml > /var/shiny-server/www/appV5/entries.xml'
+# sudo sh -c 'curl -u WUFOO-API-KEY:doesntmatter https://hudl.wufoo.com/api/v3/forms/how-healthy-is-your-squad/entries.xml > /var/shiny-server/www/appV5/entries.xml'
 #6Tj8gDj9Mwv5dLJ
 #user: hudl
 library(shiny)
