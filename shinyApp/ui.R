@@ -13,7 +13,7 @@ shinyUI(bootstrapPage(
            padding-left:35px;
            color:white;
            font-family:"Helvetica Neue", sans-serif;
-           width: 1600px;
+           width: 100%;
            position:relative;
            margin-top:0px;
            border-top:0px;

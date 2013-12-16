@@ -1,8 +1,5 @@
 ################################################################
 # Currently assumes there are exactly 8 categories in the form #
-# Also, might break if you have too many squads                #
-# Can fix this by changing the width % in the td classes       #
-# to be based on the # of teams                                #
 ################################################################
 
 
