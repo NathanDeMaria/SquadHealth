@@ -7,5 +7,6 @@ R packages used: shiny, XML
 		install.packages('shiny', lib='/usr/local/lib/R/site-library/')
 		install.packages('XML', lib='/usr/local/lib/R/site-library/')
 		
-If the Wufoo call has updated the data, but the page still shows the old data, run:
+To update the data, two commands need to be run:
+		sudo sh -c 'curl -u WUFOO-API-KEY:doesntmatter https://hudl.wufoo.com/api/v3/forms/how-healthy-is-your-squad/entries.xml > /var/shiny-server/www/shinyApp/entries.xml'
 		sudo touch /var/shiny-server/www/shinyHudl/restart.txt

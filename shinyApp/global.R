@@ -2,12 +2,8 @@
 # Currently assumes there are exactly 8 categories in the form #
 ################################################################
 
-
-# setwd('C:/Users/Nathan/Dropbox/R Projects/Hudl/Squad Health/appV5/')
-# setwd('C:/Users/nathan.demaria/Dropbox/R Projects/Hudl/Squad Health/appV5')
-
 # command to read from Wufoo
-# sudo sh -c 'curl -u WUFOO-API-KEY:doesntmatter https://hudl.wufoo.com/api/v3/forms/how-healthy-is-your-squad/entries.xml > /var/shiny-server/www/appV5/entries.xml'
+# sudo sh -c 'curl -u WUFOO-API-KEY:doesntmatter https://hudl.wufoo.com/api/v3/forms/how-healthy-is-your-squad/entries.xml > /var/shiny-server/www/shinyApp/entries.xml'
 library(shiny)
 library(XML)
 

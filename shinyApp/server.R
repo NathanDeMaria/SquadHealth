@@ -56,7 +56,11 @@ shinyServer(function(input, output) {
     
     rows = paste0(lapply(1:dim(ratings)[1], function(rowNum) {make.row(rownames(ratings)[rowNum], ratings[rowNum,valid.cols], prevRatings[rowNum,valid.cols])}),collapse='')
       
-    paste0('<table width=1600px><thead>', headrow, '</thead><tbody>', rows, '</tbody></table>')
+    
+    table(data$squad[data$quarterId == time.period()])
+    tailrow = paste0('<tr><th class="first">Responses</th>', paste0(lapply(table(data$squad[data$quarterId == time.period()]), function(count) {paste0('<td class="box">', count, '</td>',collapse='')}), collapse=''), '</tr>', collapse='')
+    
+    paste0('<table width=1600px><thead>', headrow, '</thead><tbody>', rows, tailrow, '</tbody></table>')
   })
 
 })
