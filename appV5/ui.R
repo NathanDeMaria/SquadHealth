@@ -10,15 +10,16 @@ shinyUI(bootstrapPage(
 <style type="text/css">
          .header {
            background-color:#f87620;
-           padding-left:10px;
+           padding-left:35px;
            color:white;
            font-family:"Helvetica Neue", sans-serif;
-           width:100%;
+           width: 1600px;
            position:relative;
            margin-top:0px;
            border-top:0px;
-           padding-top:10px;
-           padding-bottom:10px;
+           padding-top:5px;
+           padding-bottom:5px;
+           margin-bottom: 28px;
          }
          .headerRow {
            display:inline;
@@ -60,8 +61,7 @@ shinyUI(bootstrapPage(
          color:black;
          }
          </style>')),
-  div(class='header', img(src='hudl-logo-white.png', class='headerRow'), h2(class='headerRow', '    '), h2("Squad Health", class='headerRow')),
-  
+        div(class='header', img(src='hudl-logo-white.png', class='headerRow'), h3(style='margin-left: 20px', "Squad Health", class='headerRow')),
         sidebarPanel(selectInput(inputId="time.period", label="Time Period:", choices)),
         htmlOutput('style'),
         htmlOutput('table')
