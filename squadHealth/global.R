@@ -2,12 +2,18 @@
 # Currently assumes there are exactly 8 categories in the form #
 ################################################################
 
-# command to read from Wufoo
-# sudo sh -c 'curl -u WUFOO-API-KEY:doesntmatter https://hudl.wufoo.com/api/v3/forms/how-healthy-is-your-squad/entries.xml > /var/shiny-server/www/squadHealth/entries.xml'
+# commands to read from Wufoo - first 200 possible entries, need to add more if it hits over 200
+#system("sudo sh -c 'curl -u WUFOO-API-KEY:doesntmatter -o /var/shiny-server/www/squadHealth/entries.xml https://hudl.wufoo.com/api/v3/forms/how-healthy-is-your-squad/entries.xml?pageStart=0&pageSize=100'")
+#system("sudo sh -c 'curl -u WUFOO-API-KEY:doesntmatter -o /var/shiny-server/www/squadHealth/entries2.xml https://hudl.wufoo.com/api/v3/forms/how-healthy-is-your-squad/entries.xml?pageStart=100&pageSize=100'")
 library(shiny)
 library(XML)
 
 data = xmlToDataFrame('entries.xml')
+data2 = xmlToDataFrame('entries2.xml')
+if(dim(data2)[1] > 0)
+{
+  data = rbind(data, data2)
+}
 
 # column names
 names(data) = c('EntryId', 'quarterId', 'squad', 'Product Owner', 'PM', 'Influence work', 'Ease of release', 'Process fit', 'Clarity of mission', 'Org. support', 'Innovate', 'DateCreated', 'CreatedBy', 'DateUpdated', 'UpdatedBy')
